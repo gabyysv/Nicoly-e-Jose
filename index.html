@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+
+>
+<title> Para você ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- FUNDO -->
+  <div class="scene-bg" aria-hidden="true">
+
+    <canvas id="bokehCanvas"></canvas>
+
+    <div
+      class="outline-hearts"
+      id="outlineHearts"
+    ></div>
+
+  <!-- ═══════════════════════════════════════
+       CENA 1 — PRESENTE
+  ═══════════════════════════════════════ -->
+  <section
+    class="scene"
+    id="sceneGift"
+    aria-label="Presente"
+  >
+
+    <p
+      class="hint-text"
+      id="hintPull"
+    >
+      Feliz dia dos namorados!
+
+      Você ganhou uma carta especial...✨
+    </p>
+
+    <div
+      class="gift-wrap"
+      id="giftWrap"
+    >
+
+      <img
+        src="img/presente-snoopyy.png"
+        alt="Presente coração"
+        class="gift-image"
+      >
+
+    </div>
+
+    <div
+      class="burst-hearts"
+      id="burstHearts"
+      aria-hidden="true"
+    ></div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CENA 2 — ENVELOPE
+  ═══════════════════════════════════════ -->
+  <section
+    class="scene hidden"
+    id="sceneLetter"
+    aria-label="Carta"
+  >
+
+    <p
+      class="hint-text"
+      id="hintOpen"
+    >
+      Abra 💌
+    </p>
+
+    <div
+      class="envelope-wrap"
+      id="envelopeWrap"
+    >
+
+      <svg
+        id="envelopeSvg"
+        viewBox="0 0 240 180"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Envelope"
+      >
+
+        <!-- Corpo -->
+        <rect
+          x="10"
+          y="60"
+          width="220"
+          height="120"
+          rx="10"
+          fill="#fce4ec"
+          stroke="#f48fb1"
+          stroke-width="2"
+        />
+
+        <!-- Laterais -->
+        <path
+          d="M10,60 L120,130 L10,180 Z"
+          fill="#f48fb1"
+          opacity="0.6"
+        />
+
+        <path
+          d="M230,60 L120,130 L230,180 Z"
+          fill="#f48fb1"
+          opacity="0.6"
+        />
+
+        <!-- Parte inferior -->
+        <path
+          d="M10,180 L120,130 L230,180 Z"
+          fill="#f06292"
+          opacity="0.5"
+        />
+
+        <!-- Aba frontal -->
+        <path
+          id="flapFront"
+          d="M10,60 L120,120 L230,60 Z"
+          fill="#f48fb1"
+          stroke="#f06292"
+          stroke-width="1.5"
+          transform-origin="120 60"
+        />
+
+        <!-- Lacre -->
+        <circle
+          cx="120"
+          cy="120"
+          r="17"
+          fill="#e91e8c"
+          stroke="#880e4f"
+          stroke-width="1.5"
+        />
+        <text
+          x="120"
+          y="127"
+          text-anchor="middle"
+          font-size="20"
+          fill="#fff"
+        >
+          ♥
+        </text>
+        <!-- detalhe -->
+        <line
+          x1="40"
+          y1="148"
+          x2="200"
+          y2="148"
+          stroke="#f48fb1"
+          stroke-width="1"
+          stroke-dasharray="4,4"
+        />
+
+      </svg>
+
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CENA 3 — CARTÃO
+  ═══════════════════════════════════════ -->
+  <section
+    class="scene hidden"
+    id="sceneCard"
+    aria-label="Mensagem"
+  >
+
+    <div
+      class="stage"
+      id="stage"
+    >
+
+      <!-- corações -->
+      <div
+        class="falling-hearts"
+        id="fallingHearts"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- cartão -->
+      <article
+        class="card"
+        id="card"
+      >
+
+        <header class="card-header">
+
+          <h1 class="card-title">
+            Para você
+            <span class="red-heart">❤️</span>
+          </h1>
+
+        </header>
+
+
+        <!-- mensagem -->
+        <p class="card-msg">
+
+        SUA<br>
+        MENSAGEM <br>
+        AQUI <br>
+        ....<br>
+        ❤️ </p>
+
+        <div class="photo-frame">
+
+          <img
+            src="img/imagem.png"
+            alt="Foto do casal"
+            class="couple-photo"
+            onerror="
+              this.parentElement.classList.add('photo-missing')
+            "
+          > 
+          <div
+            class="photo-placeholder-overlay"
+            aria-hidden="true"
+          >
+
+            <span class="ph-icon">📷</span>
+            <span class="ph-text">
+              images/foto.jpg
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- footer -->
+        <footer class="card-footer">
+
+          <div class="footer-text">
+
+            Com amor,<br>
+              ❤️
+
+          </div>
+
+        </footer>
+
+      </article>
+
+
+      <!-- decoração -->
+      <div
+        class="stage-deco"
+        id="stageDeco"
+        aria-hidden="true"
+      ></div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
